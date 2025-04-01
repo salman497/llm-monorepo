@@ -44,7 +44,7 @@ llm-monorepo/
 
 ### Development
 
-To start the development environment (both React app and Azure Functions):
+To start the development environment (both React app and Azure Functions)
 
 ```bash
 npm run dev
