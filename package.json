@@ -1,0 +1,25 @@
+{
+  "name": "llm-monorepo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "workspaces": [
+    "src/libs/*",
+    "src/apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build:utils && npm run build:apps",
+    "build:utils": "npm run build --workspace=@monorepo/utils",
+    "build:apps": "npm run build --workspace=@monorepo/dev-host && npm run build --workspace=@monorepo/func-utils-testing",
+    "start:dev-host": "npm run start --workspace=@monorepo/dev-host",
+    "start:func": "npm run start --workspace=@monorepo/func-utils-testing",
+    "test": "npm run test --workspaces",
+    "dev": "concurrently \"npm run start:dev-host\" \"npm run start:func\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}
